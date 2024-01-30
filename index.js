@@ -47,14 +47,11 @@ function no(){
 }
 
 function add(){
-    newfield = document.getElementById("new");
-    content = `
-    <h3>SUBJECT : </h3>
-    <div>
-            <input id="m" type="text" placeholder="MARKS"><input id="c" type="text" placeholder="CREDITS">
-    </div>
-    `
-    newfield.innerHTML+=content;
+    var input = document.createElement("input");
+    input.setAttribute("type","text")
+    input.setAttribute("placeholder","Marks")
+    document.getElementById('new').innerHTML+=input;``
+    return input.id;
 }
 
 function reset(){
