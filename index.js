@@ -43,6 +43,21 @@ function no(){
     }
 
     gpa = (total_points/credit);
-    document.getElementById("gpa").textContent = `Your GPA IS: ${gpa}`
-    
+    document.getElementById("gpa").textContent = `Your GPA IS: ${gpa}`  
+}
+
+function add(){
+    newfield = document.getElementById("new");
+    content = `
+    <h3>SUBJECT : </h3>
+    <div>
+            <input id="m" type="text" placeholder="MARKS"><input id="c" type="text" placeholder="CREDITS">
+    </div>
+    `
+    newfield.innerHTML+=content;
+}
+
+function reset(){
+    newfield = document.getElementById("new");
+    newfield.innerHTML="";
 }
