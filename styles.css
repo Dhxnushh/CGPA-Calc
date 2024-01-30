@@ -1,0 +1,42 @@
+body{
+    font-family: monospace;
+    background-color: #1f1f1f;
+}
+
+#content{
+    text-align: center;
+    
+    height: auto;
+    margin-top: 3.5%;
+    margin-left: 40%;
+    border-radius: 15px;
+    border: solid;
+    width: 320px;
+    padding: 10px;
+    float: left;
+    background-color: #1f1f1f;
+    color: rgb(144, 223, 26);
+    box-sizing: border-box;
+}
+#lol{
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    border-color: rgb(144, 223, 26);
+    color: antiquewhite;
+}
+#lol:hover{
+    size: 1.5em;
+}
+#lol:active{
+    size: 3em;
+    background-color: rgb(144, 223, 26);
+    color: #1f1f1f;
+    border-color: #1f1f1f;
+
+}
+input{
+    background-color: #1f1f1f;
+    color: rgb(144, 223, 26);
+    border-color: rgb(144, 223, 26);
+    border-radius: 7px;
+}
