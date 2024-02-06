@@ -1,18 +1,34 @@
 function no(){
-    let m1 = Number(document.getElementById("m1").value);
-    let c1 = Number(document.getElementById("c1").value);
-    let m2 = Number(document.getElementById('m2').value);
-    let c2 = Number(document.getElementById("c2").value);
-    let m3 = Number(document.getElementById('m3').value);
-    let c3 = Number(document.getElementById("c3").value);
-    let m4 = Number(document.getElementById('m4').value);
-    let c4 = Number(document.getElementById("c4").value);
-    let m5 = Number(document.getElementById('m5').value);
-    let c5 = Number(document.getElementById("c5").value);
-    let m6x = (document.getElementById('labm').value);
-    let m6 = (m6x/50)*100
-    let c6 = Number(document.getElementById("labc").value);
-    const l = [m1,m2,m3,m4,m5,m6];
+    console.log('lol')
+    let subj = Number(document.getElementById('nosubj').value)
+    let lab = Number(document.getElementById('nolab').value)
+    let total = subj+lab;
+    let content1= document.getElementById('content1');
+    document.getElementById('content1').textContent="";
+    let n=0;
+    for(let i=1;i<=subj;i++){
+        content = `
+        <h3>Subject ${i}:</h3>
+        <input type="number" id="${n}" placeholder="Marks">
+        <input type="number" id='${n+1}' placeholder="Credits">
+        `
+        n+=2
+        content1.innerHTML+=content;
+    }
+    n=0;
+    for(let i=1;i<=lab;i++){
+        content = `
+        <h3>Lab ${i}:</h3>
+        <input type="number" id="${n}" placeholder="Marks">
+        <input type="number" id='${n+1}' placeholder="Credits">
+        `
+        n+=2
+        content1.innerHTML+=content;
+    }
+    content1.innerHTML+=`<br>
+                         <br>
+                         <button id='lol' onclick='calc(${subj},${lab})'>Calculate<button>`;
+    
     const grade = [] ;
     for (let i=0;i<6;i++){
         if (l[i]>=90){
@@ -57,4 +73,15 @@ function add(){
 function reset(){
     newfield = document.getElementById("new");
     newfield.innerHTML="";
+}
+
+function calc(subj,lab){
+    var grade = [];
+    var creds = [];
+    let x=0;
+    for(let i=0;i<=subj;i++){
+        let mark = document.getElementById('${x}');
+        grade.push(mark);
+        let credits = document.getElementById('${x+1}')
+    }
 }
