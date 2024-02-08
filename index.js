@@ -37,17 +37,18 @@ function calc(subj,lab){
     let x=0;
     for(let j=0;j<=subj;j++){
         console.log(`${x}`)
-        let mark = Number(document.getElementById(`m${x}`).value);
+        let mark = Number(document.querySelector(`#m${x}`).value);
         marks[j]=mark;
-        let credits = Number(document.getElementById(`c${x+1}`).value);
+        let credits = Number(document.querySelector(`#c${x+1}`).value);
         creds[j]=credits;
         x+=2
     }
     x=subj+2;
     for(let i=0;i<=lab;i++){
-        let mark = document.getElementById(`m${x}`).value;
+        console.log(document.getElementById(`m${x}`));
+        let mark = document.querySelector(`#m${x}`).value;
         marks[x]=mark;
-        let credits = document.getElementById(`c${x+1}`).value;
+        let credits = document.querySelector(`#c${x+1}`).value;
         creds[x]=mark;
         x+=2;
     }
