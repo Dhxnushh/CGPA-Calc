@@ -1,5 +1,4 @@
 function no(){
-    console.log('lol')
     let subj = Number(document.getElementById('nosubj').value)
     let lab = Number(document.getElementById('nolab').value)
     let total = subj+lab;
@@ -34,26 +33,23 @@ function no(){
 function calc(subj,lab){
     var marks = [];
     var creds = [];
+    let total = subj+lab;
     let x=0;
-    for(let j=0;j<=subj;j++){
-        console.log(`${x}`)
+    for(let j=0;j<subj;j++){
         let mark = Number(document.querySelector(`#m${x}`).value);
-        marks[j]=mark;
+        marks.push(mark);
         let credits = Number(document.querySelector(`#c${x+1}`).value);
-        creds[j]=credits;
+        creds.push(credits);
         x+=2
     }
     x=subj+2;
-    for(let i=0;i<=lab;i++){
-        console.log(document.getElementById(`m${x}`));
-        let mark = document.querySelector(`#m${x}`).value;
-        marks[x]=mark;
-        let credits = document.querySelector(`#c${x+1}`).value;
-        creds[x]=mark;
+    for(let i=0;i<lab;i++){
+        let mark = Number((document.querySelector(`#m${x}`).value)/50)*100;
+        marks.push(mark);
+        let credits = Number(document.querySelector(`#c${x+1}`).value);
+        creds.push(credits);
         x+=2;
     }
-    console.log(marks);
-    console.log(creds);
     var grade=[];
     for (let i=0;i<6;i++){
         if (marks[i]>=90){
@@ -75,4 +71,17 @@ function calc(subj,lab){
             grade[i] = 0;
         }
     }
+    var gp=[];
+    let creds_sum=0;
+    let gp_sum=0;
+    for(let i=0;i<total;i++){
+        gp.push(grade[i]*creds[i])
+    }
+    for(let i=0;i<total;i++){
+        creds_sum+=creds[i];
+        gp_sum+=gp[i];
+    }
+    let gpa;
+    gpa = gp_sum/creds_sum;
+    content1.innerHTML+=`<p>Your GPA is: ${gpa}</p>`
 }
